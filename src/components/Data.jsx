@@ -36,6 +36,15 @@ const Price = styled.p`
   margin-bottom: 10px;
   margin-top: 10px;
 `;
+const ThumbNail = styled.div`
+  max-width: 200px;
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(${(props) => props.backgroundUrl});
+`;
 
 export default function Data() {
   // 이따가 users 추가하고 삭제하는거 진행을 도와줄 state
@@ -58,6 +67,7 @@ export default function Data() {
   const showUsers = users.map((value) => (
     <Container>
       <Product>
+        <ThumbNail backgroundUrl={value.이미지} />
         <FlexGrow>
           <Title>{value.이름}</Title>
           <Price> 칼로리 : {value.칼로리} kcal</Price>
